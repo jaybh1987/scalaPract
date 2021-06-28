@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="38cf4968-33f5-4940-997f-f252caf57add" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/_global/update/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/_global/update/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.13/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.13/output" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/project/project/target/" />
+    <ignored path="$PROJECT_DIR$/project/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/scala/Main.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="1280" />
+    <option name="y" value="27" />
+    <option name="width" value="1270" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1623826054868" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="hello-world" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="scalaproblems [file:/home/laitmatus/Desktop/Learning_projects/akkaProjects/project04/scalaproblems/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="hello-world-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/build.sbt" value="1944765709" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="2090181406" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../Sample_projects/Akka/akka-http-scala-js-websocket-chat-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../MathProject/back" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../project01" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../project02" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../project03/arserpractise" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../akkaprojects/akkaproject" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../kafka_project/kafka_consumer" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../kafka_project/kafka_sample_app" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../play_projects/akka-ws-test-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../play_projects/play-https-redirect-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../play_projects/play-scala-tls-example-2.5.x" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../play_projects/play-slick-silhouette-auth-api-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../sbt_project/kafka_one" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Practise_Project/sbt_service" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Samples Projects for help/http_rest" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../Samples Projects for help/lift-mongodb-sample-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../akka-http-quickstart-scala" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../akka-quickstart-scala" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../akkaproject/akka-quickstart-scala" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../gitlift/simply_lift-master/samples/from_mvc" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myapplication" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myfstliftapp" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/Simple-Akka-Scheduler-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/advancelift" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/akka-quartz-scheduler-application.g8-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/akka-quartz-scheduler-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/basicprojectsample" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/kafka/services" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/liftblankapp" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/myappak" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../myproject/todoservice" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../project/furnishing" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../sandyfur/furniture-backend" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/Sample_projects/Akka-Server-Sent-Event/akka-sse-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/Sample_projects/play-scala-streaming-example-2.5.x" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/Sample_projects/play-sse-example-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/Sample_projects/push_notification_akkaserver/skarn-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/Sample_projects/sse-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/play-scala-sse-example-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/play_projects/PlayFrameworkScalaWebSockets-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/play_projects/play-scala-sse-example-master" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/play_projects/try_web_socket" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/practical_proj" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/practiseFile" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/practiseOne/hellomatrix" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/sbt_project/learning_akka_stream" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala/sbt_project/sbt_services" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../scala_project/furnishing" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../todoapp" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/HelloScalaFutures-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/Lift framework tarfile/lift-lift_30_sbt-35403c6/lift_basic" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/TaxCalculator-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/akka-http-quickstart-scala" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/akka-quartz-scheduler-master (1)/akka-quartz-scheduler-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/lift/lift-lift_26_sbt-72d7698/scala_211/lift_basic" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/lift/lift-lift_26_sbt-72d7698/scala_211/lift_mvc" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/play-https-redirect-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/play-samples-play-scala-tls-example" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/sampleproject/play-scheduler-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/sampleproject/play2-scheduled-job-demo-master" value="PREVIEW" />
+        <entry key="$USER_HOME$/Downloads/slick-codegen-example-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38cf4968-33f5-4940-997f-f252caf57add" name="Default Changelist" comment="" />
+      <created>1623817434541</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623817434541</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1280" y="27" width="1270" height="1053" extended-state="4" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25490198" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32914045" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="SBT Execute" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="sbt" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,4 @@
+[0m[[0m[33mwarn[0m] [0m[0m/home/laitmatus/Desktop/Learning_projects/akkaProjects/project04/scalaproblems/src/main/scala/Main.scala:9:22: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m    case h :: Nil => h[0m
+[0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
