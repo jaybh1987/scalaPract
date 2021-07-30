@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException
+
 object Main extends App {
 
 //P01 (*) Find the last element of a list.
@@ -110,5 +112,46 @@ object Main extends App {
 
 
 
+  def last[A](seq: Seq[A]): A = seq match {
+    case h :: Nil => h
+    case h :: tail => last(tail)
+    case _ => throw new NoSuchElementException("Not Found")
+  }
+
+  def updateList[A](r: Seq[A], elementToAdd: A): Seq[A] = r.dropRight(1) :+ elementToAdd
+
+  def runLengthEncoding(x: String): String = {
+    x.foldLeft(Seq[(Int, Char)]()) {
+      (myDefault, element) =>
+        if(myDefault.isEmpty) myDefault :+ (1, element)
+        else {
+          val (c, char_value) = last(myDefault)
+          if(char_value == element) updateList(myDefault, (c + 1, element) )
+          else myDefault :+ (1, element)
+        }
+    }.map{ case (count, alpha) => s"$count$alpha"}.mkString
+  }
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
