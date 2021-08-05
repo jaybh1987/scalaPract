@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38cf4968-33f5-4940-997f-f252caf57add" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/links.text" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
     </list>

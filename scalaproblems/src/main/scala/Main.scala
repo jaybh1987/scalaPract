@@ -115,13 +115,43 @@ object Main extends App {
     case h  :: Nil                         =>   h :: dropConsecutive(Nil)
     case Nil                               =>   Nil
   }
-
+  def compressRecursive[A](ls: List[A]): List[A] = ls match {
+    case Nil => Nil
+    case h :: tail => h :: compressRecursive( tail.dropWhile(_ == h) )
+  }
+  def compressFunctional[A](ls: List[A]): List[A] = ls.foldRight(List[A]()) {
+    case (h, r) =>
+      if(r.isEmpty || r.head != h) h :: r else r
+  }
 
   def last[A](seq: Seq[A]): A = seq match {
     case h :: Nil           =>    h
     case _ :: tail          =>    last(tail)
     case _                  =>    throw new NoSuchElementException("Not Found")
   }
+
+
+  /*
+  * P09 Pack consecutive duplicates of list element into sublist
+  *   pack(List('a','a', 'b', 'c', 'c')
+  *   output : List( List('a', 'a'), List('b'), List('c','c') )
+  *
+  *   what span function doing
+  *     span function take the element from the list and check with predicate
+  *     if true then it move forward but if false then it do not move forward.
+  *
+  * */
+
+  def pack[A](ls: List[A]): List[List[A]] = {
+    if(ls.isEmpty)  List(List())
+    else {
+      val (packed, next)  = ls.span( _ == ls.head)
+      if(next == Nil ) List(packed)
+      else packed :: pack(next)
+    }
+  }
+
+
 
   def updateList[A](r: Seq[A], elementToAdd: A): Seq[A] = r.dropRight(1) :+ elementToAdd
 
@@ -130,7 +160,6 @@ object Main extends App {
       (myDefault, element) =>
         if(myDefault.isEmpty) myDefault :+ (1, element)
         else {
-
           val (c, char_value)   =   myDefault.last
           if(char_value == element) updateList(myDefault, (c + 1, element) )
           else myDefault :+ (1, element)
