@@ -1,4 +1,5 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/laitmatus/Desktop/Learning_projects/akkaProjects/project04/scalaproblems/src/main/scala/Main.scala:9:22: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/laitmatus/Desktop/learning/scalaPract/scalaproblems/src/main/scala/Main.scala:11:22: unreachable code[0m
 [0m[[0m[33mwarn[0m] [0m[0m    case h :: Nil => h[0m
 [0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0m1 deprecation (since 2.12.0); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

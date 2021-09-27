@@ -152,6 +152,42 @@ object Main extends App {
   }
 
 
+  def encode[A](ls: List[A]): List[(Int, A)] = pack(ls).map{ e => (e.length, e.head)}
+
+  def encodeModified[A](ls: List[A]): List[Any] = encode(ls).map{
+    t =>
+        if(t._1 == 1) t._2 else t
+  }
+
+  def encodeModified2[A](ls: List[A]): List[Either[A, (Int, A)]] = encode(ls).map {
+    t =>
+      if(t._1 == 1) Left(t._2) else Right(t)
+  }
+
+//  //p12
+//  def decode[A](ls: List[(Int, A)]): List[A] = ls.flatMap {
+//    e =>
+//        make(e._1, e._2)
+//  }
+
+
+  //p14
+  def duplicate[A](ls: List[A]): List[A] = ls.flatMap( r => List(r, r))
+
+
+  /*
+  * input List('a', 'b')
+  * */
+  //p15
+  def duplicateN[A](n: Int, ls: List[A]): List[A] = ls.flatMap {
+    r =>
+      (0 until n).flatMap( _ => List(r))
+  }
+
+
+  //p16
+
+
 
   def updateList[A](r: Seq[A], elementToAdd: A): Seq[A] = r.dropRight(1) :+ elementToAdd
 
@@ -233,33 +269,7 @@ object Main extends App {
     prepare(x, c)
   }
 
-
-
-  def formatNumber(phone: String): String = {
-    s" (${phone.take(3)}) ${phone.drop(4)} "
-  }
-
-  sealed trait Json
-  object Json {
-    case class Str(s: String) extends Json
-    case class Num(value: Double) extends Json
-  }
-
-  //def convertToJson(x)
-  def convertToJson(x: Any): Json = x match {
-    case s: String => Json.Str(s)
-    case d: Double => Json.Num(d)
-    case i: Int => Json.Num(i.toDouble)
-  }
-  //61409
 }
-
-case class Person(id: Int, name: String)
-object Person {
-  def apply(name: String) : Person = new Person(1, name)
-}
-
-
 
 
 
