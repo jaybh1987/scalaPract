@@ -1,0 +1,7 @@
+package listFunctions
+
+object FunctionApplication {
+
+
+
+}

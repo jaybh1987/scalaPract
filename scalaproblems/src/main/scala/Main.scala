@@ -226,25 +226,31 @@ object Main extends App {
     loop(0, ls)
   }
 
-
-  /*2, 3 , (3,4,5,6,7,8)
-
-    case (2, 3, 3 :: (4,5,6,7,8) ) =>
-
-  */
-
   def sliceBuiltin[A](start: Int, end: Int, ls: List[A]): List[A] = ls.slice(start, end)
 
 
-
-
-  List(1,2,4).splitAt(3)
-
-
-
+  //P19
   /*
-  * dropRecursive(4, List(3,4,5,6,7,8))
+  * scala> rotate(3, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res0: List[Symbol] = List('d, 'e, 'f, 'g, 'h, 'i, 'j, 'k, 'a, 'b, 'c)
+
+scala> rotate(-2, List('a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i, 'j, 'k))
+res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
   * */
+  def rotate[A](n: Int, l: List[A]): List[A] = {
+    def loop(counter: Int, ls: List[A], rotated: List[A]): List[A] = (counter, ls, rotated) match {
+      case (c, h :: tail, l)  if c != 0 => loop(c - 1, tail, h :: l)
+      case (0, l, r) => l ++ r
+    }
+    loop(n, l, Nil)
+  }
+
+  def rotate2[A](n: Int, ls: List[A]): List[A] = {
+    val nBounded = if(ls.isEmpty) 0 else n % ls.length
+    if(nBounded < 0) rotate2(nBounded + ls.length, ls) else (ls drop nBounded) ::: (ls take nBounded)
+  }
+
+
 
 }
 
