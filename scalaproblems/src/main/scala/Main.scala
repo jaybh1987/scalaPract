@@ -174,7 +174,6 @@ object Main extends App {
   //p14
   def duplicate[A](ls: List[A]): List[A] = ls.flatMap( r => List(r, r))
 
-
   /*
   * input List('a', 'b')
   * */
@@ -184,90 +183,81 @@ object Main extends App {
       (0 until n).flatMap( _ => List(r))
   }
 
-
   //p16
+  def dropNth[A](ls: List[A], idx: Int): List[A] = ls
+    .zipWithIndex
+    .filter(r => r._2 != idx)
+    .map(_._1)
 
 
-
-  def updateList[A](r: Seq[A], elementToAdd: A): Seq[A] = r.dropRight(1) :+ elementToAdd
-
-  def runLengthEncoding(x: String): String = {
-    x.foldLeft(Seq[(Int, Char)]()) {
-      (myDefault, element) =>
-        if(myDefault.isEmpty) myDefault :+ (1, element)
-        else {
-          val (c, char_value)   =   myDefault.last
-          if(char_value == element) updateList(myDefault, (c + 1, element) )
-          else myDefault :+ (1, element)
-        }
-    }.map{ case (count, alpha) => s"$count$alpha"}.mkString
+  def dropKth[A](ls: List[A], inx: Int): List[A] = (ls, inx) match {
+    case (Nil, _)       => Nil
+    case (_ :: tail,  0) => dropKth(tail, 0 - 1)
+    case (h :: tail, n) => h :: dropKth(tail, n - 1)
   }
 
-  def getcount[A](l: List[A], count: Int): Int = l match {
-    case _ :: tail => getcount(tail, count + 1)
-    case Nil => count
+  //P17
+  def splitRecursive[A](n: Int, ls: List[A]): (List[A], List[A]) = (n, ls) match {
+    case (_, Nil)       => (Nil, Nil)
+    case (0, list)      => (Nil, list)
+    case (n, h :: tail) =>
+      val (pre, post) = splitRecursive(n - 1, tail)
+      (h :: pre, post)
   }
+  def splitFunction[A](ls: List[A], i: Int) = ls.splitAt(i)
 
-  trait Animal
-  case class Dog(x: String) extends Animal
-  case class Cat(y: String) extends Animal
+  //p18
+  def slice[A](start: Int, end: Int, ls: List[A]): List[A] = {
 
-
-  def fixQue(x: List[Int], elm: Int, size: Int): List[Int] = (x.length, size) match {
-    case (len, sz) if len < sz      =>      x :+ elm
-    case (len, sz) if len > sz      =>      (x :+ elm).drop( (len - sz) + 1)
-    case (len, sz) if len == sz     =>       x.drop(1) :+ elm
-    case _                          =>       Nil
-  }
-
-  def helpSort(element: Int, ls: List[Int]): List[Int] = ls match {
-    case h :: tail  if  element > h     =>      h :: helpSort(element, tail)
-    case h :: tail  if  element < h     =>      element :: helpSort(h, tail)
-    case Nil => element :: Nil
-  }
-
-  def sorted(l: List[Int]): List[Int] = l match {
-    case h :: tail      =>    helpSort(h, sorted(tail))
-    case Nil            =>    Nil
-  }
-
-  def merge[A <% Ordered[A]](xs: List[A]): List[A] = {
-
-    def fun(xs: List[A], ys: List[A]): List[A] = (xs, ys) match {
-      case (_, Nil) => xs
-      case (Nil, _) => ys
-      case (x :: xs1, y :: ys1) =>
-        if(x < y) x :: fun(xs1, ys) else y :: fun(xs, ys1)
+    def loop(count: Int, l: List[A]): List[A] = (count, l) match {
+      case (_, Nil) => Nil
+      case (c, h :: tail) if c < start => loop(c + 1, tail)
+      case (c, h :: tail) if c == start && c < end => h :: loop(c + 1, tail)
+      case (c, h :: tail) if c == end => h :: loop(c + 1, tail)
+      case (c, _ :: tail) if c > end => loop(c + 1, tail)
+      case _ => Nil
     }
-    val n = xs.length / 2
-    if(n == 0) xs
-    else {
-        val (left, right) = xs.splitAt( n )
-        fun(  merge(left) ,   merge (right) )
-    }
+
+    loop(0, ls)
   }
+
+  def sliceRecursive[A](start: Int, end: Int, ls: List[A]): List[A] = (start, end, ls) match {
+    case (_, _, Nil)  => Nil
+    case (_, e, _) if e <= 0   => Nil
+    case (s, e, h :: tail)  if s <= 0 => h :: sliceRecursive(0, e - 1, tail)
+    case (s, e, _ :: tail)    =>  sliceRecursive(s - 1, e - 1, tail)
+  }
+
+  def slice[A](s: Int, e: Int, ls: List[A]): List[A] = {
+    def loop(counter: Int, ls: List[A]): List[A] = (counter, ls) match {
+      case (_, Nil)							=> Nil
+      case (n, _ :: tail)	if n < s 			=> loop(n + 1, tail)
+      case (n ,h :: tail) if n == s || n <= e => h :: loop(n + 1, tail)
+      case (n, _) if n > e => Nil
+      case (_, _) => Nil
+    }
+    loop(0, ls)
+  }
+
+
+  /*2, 3 , (3,4,5,6,7,8)
+
+    case (2, 3, 3 :: (4,5,6,7,8) ) =>
+
+  */
+
+  def sliceBuiltin[A](start: Int, end: Int, ls: List[A]): List[A] = ls.slice(start, end)
+
+
+
+
+  List(1,2,4).splitAt(3)
+
+
 
   /*
-  * merge(List(4, 3, 89, 90, 45, 12))
-  *
-  * val ( List(4, 3, 89), List(90, 45, 12) )
-  * fun( merge(List(4, 3, 89)), merge( List(90 45, 12) )
-  * fun( fun( merge(List(4), merge(List(3, 89) ), fun( merge(List(90), merge(List(45, 12)) ) )
-  * fun( fun( fun()        , fun()              , fun(  fun(),         fun() ) ) )
+  * dropRecursive(4, List(3,4,5,6,7,8))
   * */
-
-
-  def tables(x: Int): Unit = {
-    val c = 1
-    def prepare(x: Int, counter: Int): Unit = {
-      if(counter == 11) ()
-      else {
-        println(s"$x * $counter = ${x * counter}")
-        prepare(x, counter + 1)
-      }
-    }
-    prepare(x, c)
-  }
 
 }
 
