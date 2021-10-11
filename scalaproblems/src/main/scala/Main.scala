@@ -207,19 +207,6 @@ object Main extends App {
   def splitFunction[A](ls: List[A], i: Int) = ls.splitAt(i)
 
   //p18
-  def slice[A](start: Int, end: Int, ls: List[A]): List[A] = {
-
-    def loop(count: Int, l: List[A]): List[A] = (count, l) match {
-      case (_, Nil) => Nil
-      case (c, h :: tail) if c < start => loop(c + 1, tail)
-      case (c, h :: tail) if c == start && c < end => h :: loop(c + 1, tail)
-      case (c, h :: tail) if c == end => h :: loop(c + 1, tail)
-      case (c, _ :: tail) if c > end => loop(c + 1, tail)
-      case _ => Nil
-    }
-
-    loop(0, ls)
-  }
 
   def sliceRecursive[A](start: Int, end: Int, ls: List[A]): List[A] = (start, end, ls) match {
     case (_, _, Nil)  => Nil
