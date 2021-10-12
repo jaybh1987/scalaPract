@@ -1,3 +1,5 @@
+import sun.reflect.annotation.ExceptionProxy
+
 import java.util.NoSuchElementException
 
 object Main extends App {
@@ -249,6 +251,40 @@ res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
     val nBounded = if(ls.isEmpty) 0 else n % ls.length
     if(nBounded < 0) rotate2(nBounded + ls.length, ls) else (ls drop nBounded) ::: (ls take nBounded)
   }
+
+  def removekth[A](n: Int, ls: List[A]): (List[A], A) = if(n < 0) throw new Exception("No such element")
+  else {
+    (n, ls) match {
+      case (_, Nil)             => throw new Exception("No such element")
+      case (0, h :: tail)       => (tail, h)
+      case (_, h :: tail)       =>
+        val (t, e) = removekth(n - 1, tail)
+        (ls.head :: t, e)
+    }
+  }
+
+
+  //P21
+  def insertAt[A](indx: Int, elm: A, ls: List[A]): List[A] = {
+
+    (indx, ls) match {
+      case (_, Nil)   => Nil
+      case (0, ls)    => elm :: ls
+      case (_, h :: tail) =>
+        h :: insertAt(indx - 1, elm, tail)
+    }
+  }
+
+  /* remove kth elment*/
+
+  /*
+  * Mars
+  *
+  * Equity to Dept
+  * Dept to Equity
+  * cycle.
+  *
+  * */
 
 
 
