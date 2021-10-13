@@ -252,6 +252,7 @@ res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
     if(nBounded < 0) rotate2(nBounded + ls.length, ls) else (ls drop nBounded) ::: (ls take nBounded)
   }
 
+  //P20
   def removekth[A](n: Int, ls: List[A]): (List[A], A) = if(n < 0) throw new Exception("No such element")
   else {
     (n, ls) match {
@@ -266,7 +267,6 @@ res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
 
   //P21
   def insertAt[A](indx: Int, elm: A, ls: List[A]): List[A] = {
-
     (indx, ls) match {
       case (_, Nil)   => Nil
       case (0, ls)    => elm :: ls
@@ -275,16 +275,13 @@ res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
     }
   }
 
-  /* remove kth elment*/
+  //P22
+  def range(start: Int, end: Int): List[Int] = if( start > end ) Nil
+  else {
+    start :: range(start + 1, end)
+  }
 
-  /*
-  * Mars
-  *
-  * Equity to Dept
-  * Dept to Equity
-  * cycle.
-  *
-  * */
+  //P26
 
 
 
