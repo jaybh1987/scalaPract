@@ -295,7 +295,6 @@ res1: List[Symbol] = List('j, 'k, 'a, 'b, 'c, 'd, 'e, 'f, 'g, 'h, 'i)
   }
 
 
-
 }
 
 
