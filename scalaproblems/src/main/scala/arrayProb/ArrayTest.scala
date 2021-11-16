@@ -124,6 +124,91 @@ class ArrayTest {
     case Nil => throw new Exception("Empty list")
   }
 
+  def rotate[A](l: List[A]): List[A] = {
+    def fun[A](l: List[A]): (A, List[A]) = l match {
+      case h :: Nil => (h, Nil)
+      case h :: tail =>
+        val (elm, ls) = fun(tail)
+        (elm, h :: ls)
+      case Nil => throw new Exception("empty")
+    }
+    val (last, list) = fun(l)
+    last :: list
+  }
+
+
+
+  def findMissingInteger(l: List[Int]): Int = {
+    def loop(counter: Int, ls: List[Int]): Int = ls match {
+      case h :: tail => if(h == counter) loop(counter + 1, tail) else counter
+      case Nil => counter
+    }
+    l match {
+      case h :: t =>
+        loop(h, l)
+      case Nil => 0
+    }
+  }
+
+
+  /*
+  * Input:
+    N = 4, K = 6
+    arr[] = {1, 5, 7, 1}
+    Output: 2
+    Explanation:
+    arr[0] + arr[1] = 1 + 5 = 6
+    and arr[1] + arr[3] = 5 + 1 = 6.
+  * */
+
+  def getPairs(l: List[Int], sum: Int)= {
+    {
+      for {
+        i <- 0 until l.length
+        x = i + 1
+        j <- x until l.length
+      } yield (l(i), l(j))
+    }.flatMap{
+      r =>
+        println(r)
+        if (r._1 + r._2 == sum) Some(r) else None
+    }.length
+  }
+
+  /*
+  * https://github.com/mypetyak/scala-algorithms/blob/master/sort/quicksort.scala
+  * https://www.javatpoint.com/quick-sort
+  * */
+
+  def swap(a: Array[Int], pos1: Int, pos2: Int): Unit = {
+    val stash = a(pos1)
+    a(pos1) = a(pos2)
+    a(pos2) = stash
+  }
+
+  def partition(subArray: Array[Int], low: Int, high: Int): Int = {
+    val pivot = high
+    var i = low
+    for(j <- low to high if subArray(j) < subArray(pivot)) {
+      swap(subArray, i, j)
+      i+=1
+    }
+    swap(subArray, i, pivot)
+    i
+  }
+
+  def quicksort(a: Array[Int], low: Int, high: Int): Unit = {
+    if(low < high) {
+      val p = partition(a, low, high)
+      quicksort(a, low, p - 1)
+      quicksort(a, p+1, high)
+    }
+  }
+
+
+
+
+
 }
 
 
