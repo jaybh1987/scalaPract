@@ -1,5 +1,7 @@
 package algo
 
+import scala.annotation.tailrec
+
 object Algo {
 
   def updateList[A](r: Seq[A], elementToAdd: A): Seq[A] = r.dropRight(1) :+ elementToAdd
@@ -110,6 +112,17 @@ object Algo {
       quicksort(a, pi + 1, high)
     }
   }
+
+
+  def factorial(n: BigInt): BigInt =  {
+    @tailrec
+    def loop(num: BigInt, result: BigInt): BigInt = {
+      if(num == 1) result
+      else loop(num - 1, num * result)
+    }
+    loop(n, 1)
+  }
+
 
 
 
