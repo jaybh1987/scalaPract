@@ -1,6 +1,7 @@
 https://dzone.com/articles/learning-big-o-notation-with-on-complexity
 https://www.bigocheatsheet.com/
 
+
 O(1):- represents a function that always takes the same take regardless of input size.
 def isFirstNumberEqualToOne(numbers: List[Int]): Boolean = {
     numbers.get(0) == 1;
@@ -8,6 +9,7 @@ def isFirstNumberEqualToOne(numbers: List[Int]): Boolean = {
 
 O(n) :- Represents the complexity of a function that increases linearly and in direct
 proportion to number of inputs.
+
 
 This is a good example of how BIG O Notation describe the worst case scenario as
 the function could return the true after reading the first element or false after
@@ -78,17 +80,6 @@ public boolean containsNumber(List<Integer> numbers, int comparisonNumber) {
   }
   return false;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -123,7 +123,105 @@ object Algo {
     loop(n, 1)
   }
 
+  def intersect(x: List[Int], y: List[Int]): List[Int] = {
+    var j : List[Int] = List.empty
+    for(i <- y.indices) {
+      if(x.contains(y(i))) {
+        j = j:+y(i)
+      } else ()
+    }
+    j
+  }
 
+
+  def logorithmOfNumberBase2(number: Int): Int = {
+    def loop(n: Int, c: Int): Int = {
+      if(n == number) c
+      else loop(n * 2, c + 1)
+    }
+    if(number % 2 == 0) loop(2, 1) else -1
+  }
+
+
+
+
+
+  //  Input:
+//    n = 7
+
+//  arr[] = {1, 5, 3, 4, 3, 5, 6}
+//  Output: 2
+//  Explanation:
+//    5 is appearing twice and
+//  its first appearence is at index 2
+//  which is less than 3 whose first
+//  occuring index is 3.
+
+  def firstRepeatingElem[A](l: List[A]): Option[Int] = {
+    var m: Map[A, Int] = Map.empty
+    var ans: Option[Int] = None
+    for(i <- l.indices) {
+      if(m.contains(l(i))) {
+        ans = m.find{
+          case (k, v) => k == l(i)
+        }.map(_._2)
+      } else {
+        m = m + ( l(i) -> i)
+        None
+      }
+    }
+    ans
+  }
+
+  def printFibbo(n: Int) : Unit = {
+    def loop(a: Int, b: Int, end: Int): Unit = {
+      if(b > end) println(" end ")
+      else {
+        print(s" $b ")
+        loop(b, a + b, end)
+      }
+    }
+    loop(0, 1, n)
+  }
+
+
+  /*
+  * find first non repeating elment from the list.
+  *
+  * need to change this function.
+  * */
+
+  def firstNonRepeating(l: List[Int]): Unit = {
+    var m: Map[Int, Int] = Map.empty
+    var elm = 0
+    for(i <- l.indices) {
+      if(m.contains( l(i) )) {
+        val count = m(l(i)) + 1
+        m = m + ( l(i) -> count)
+      } else {
+        m = m + ( l(i) -> 1)
+        elm = l(i)
+      }
+    }
+
+    //find the the map with value = 1 if not found then print -1
+    print(elm)
+  }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
