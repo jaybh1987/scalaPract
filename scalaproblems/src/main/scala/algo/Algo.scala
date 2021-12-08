@@ -191,22 +191,36 @@ object Algo {
   * need to change this function.
   * */
 
-  def firstNonRepeating(l: List[Int]): Unit = {
+  def firstNonRepeating(l: List[Int]): String = {
     var m: Map[Int, Int] = Map.empty
-    var elm = 0
     for(i <- l.indices) {
       if(m.contains( l(i) )) {
         val count = m(l(i)) + 1
         m = m + ( l(i) -> count)
-      } else {
-        m = m + ( l(i) -> 1)
-        elm = l(i)
-      }
+      } else m = m + ( l(i) -> 1)
     }
-
-    //find the the map with value = 1 if not found then print -1
-    print(elm)
+    m.collect {
+      case (k, v) if v == 1 => (k, v)
+    }.values.mkString
   }
+
+  /*
+  * Given an array of positive and negative numbers.
+  * Find if there is a subarray (of size at-least one) with 0 sum.
+  *
+  *
+  * Input:
+    5
+    4 2 -3 1 6
+
+    Output:
+    Yes
+
+    Explanation:
+    2, -3, 1 is the subarray
+    with sum 0.
+  * */
+
 
 
 }
