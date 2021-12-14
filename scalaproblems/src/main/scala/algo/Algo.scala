@@ -190,6 +190,19 @@ object Algo {
   *
   * need to change this function.
   * */
+//  def firstNonRepeating[A](l: List[A]): String = {
+//    var m: Map[A, Int] = Map.empty
+//
+//    for(i <- l.indices) {
+//      if(m.contains( l(i))) {
+//        var c = m(l(i)) + 1
+//        m = m + ( l(i) -> c)
+//      } else m = m + ( l(i) -> 1)
+//    }
+//    m.collect {
+//      case (k, v) if v == 1 => (k, v)
+//    }.keys.mkString
+//  }
 
   def firstNonRepeating(l: List[Int]): String = {
     var m: Map[Int, Int] = Map.empty
@@ -201,7 +214,7 @@ object Algo {
     }
     m.collect {
       case (k, v) if v == 1 => (k, v)
-    }.values.mkString
+    }.keys.mkString
   }
 
   /*
@@ -221,6 +234,19 @@ object Algo {
     with sum 0.
   * */
 
+  val l = List(4,2,-3,1,6)
+  def subArraySumZero(l: List[Int]): List[Int] = {
+    def loop(ls: List[Int],result: List[Int]): List[Int] = ls match {
+      case h :: t if result == Nil => loop(t, result :+ h)
+      case h :: tail => if( result.sum == 0 ) result else loop(tail, result :+ h)
+      case Nil => result
+    }
+    def loop2(r: List[Int]): List[Int] = {
+      val l = loop(r, Nil)
+      if(l.sum != 0) loop2(l.drop(1)) else l
+    }
+    loop2(l)
+  }
 
 
 }
