@@ -235,6 +235,7 @@ object Algo {
   * */
 
   val l = List(4,2,-3,1,6)
+
   def subArraySumZero(l: List[Int]): List[Int] = {
     def loop(ls: List[Int],result: List[Int]): List[Int] = ls match {
       case h :: t if result == Nil => loop(t, result :+ h)
@@ -247,6 +248,40 @@ object Algo {
     }
     loop2(l)
   }
+
+  def findLogestSeq(list: List[Int]) = {
+
+    def f(l: List[Int]): List[Int] = {
+      import scala.util.control.Breaks._
+      var counter = 0
+      var arr: List[Int] = List.empty
+      breakable {
+        for(i <- l.indices) {
+          if(i == 0) {
+            counter = l(i)
+          }
+          if(l(i) == counter) arr = arr :+ l(i) else break
+          counter = counter + 1
+        }
+      }
+      arr
+    }
+
+    def loop(l: List[Int], res: List[(List[Int],Int)]): List[(List[Int], Int)] = {
+      if(l == Nil) res
+      else {
+        val out = f(l)
+        loop( l.diff(out), res :+ (out, out.length) )
+      }
+    }
+
+    loop(list, List((List.empty[Int], 0)))
+      .foldRight(List.empty[Int]) {
+        case ( (mylist, c), result) =>
+          if(result.length > c) result else mylist
+      }
+  }
+
 
 
 }
