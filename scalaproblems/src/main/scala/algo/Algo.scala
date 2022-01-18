@@ -1,7 +1,7 @@
 package algo
 
 import scala.annotation.tailrec
-
+import scala.collection.mutable._
 object Algo {
 
   def updateList[A](r: Seq[A], elementToAdd: A): Seq[A] = r.dropRight(1) :+ elementToAdd
@@ -282,7 +282,32 @@ object Algo {
       }
   }
 
+  def adustNegatives(l: List[Int], negatives: List[Int]): List[Int] = l match {
+    case h :: t if h < 0 => adustNegatives(t, negatives :+ h)
+    case h :: t if h > 0 => h :: negatives ::: t
+    case Nil => Nil
+  }
 
+  def alternate(ls: List[Int]): List[Int] = {
+    var p: Stack[Int] = Stack.empty
+    var n: Stack[Int] = Stack.empty
+    var l: List[Int] = List.empty
+
+    val list = adustNegatives(ls, Nil)
+
+    print(list)
+
+    for(i <- list.indices) {
+      if(ls(i) > 0) p.push(ls(i)) else n.push(ls(i))
+      if(l.nonEmpty) {
+        if(p.nonEmpty && l.last < 0) l = l :+ p.pop()
+        if(n.nonEmpty && l.last > 0) l = l :+ n.pop()
+      } else {
+        if(p.nonEmpty) l = l :+ p.pop()
+      }
+    }
+    l
+  }
 
 }
 
