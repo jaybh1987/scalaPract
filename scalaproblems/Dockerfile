@@ -1,7 +1,24 @@
-FROM mozilla/sbt
-RUN mkdir -p /home/app 
-COPY . /home/app 
-RUN cd /home/app
-CMD ["sbt", "run"]
+FROM ubuntu
 
-EXPOSE 9000
+# Install OpenJDK-8
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk && \
+    apt-get install -y ant && \
+    apt-get clean;
+    
+# Fix certificate issues
+RUN apt-get update && \
+    apt-get install ca-certificates-java && \
+    apt-get clean && \
+    update-ca-certificates -f;
+
+# Setup JAVA_HOME -- useful for docker commandline
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+RUN export JAVA_HOME
+
+WORKDIR /app
+COPY . . 
+
+EXPOSE 8888
+
+CMD ["sbt", "run"]

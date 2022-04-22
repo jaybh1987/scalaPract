@@ -249,7 +249,7 @@ object Algo {
     loop2(l)
   }
 
-  def findLogestSeq(list: List[Int]) = {
+  def findLogestSeq(list: List[Int]): List[Int] = {
 
     def f(l: List[Int]): List[Int] = {
       import scala.util.control.Breaks._
